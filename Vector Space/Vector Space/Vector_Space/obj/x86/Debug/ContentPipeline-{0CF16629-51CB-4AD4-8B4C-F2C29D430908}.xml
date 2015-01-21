@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{0CF16629-51CB-4AD4-8B4C-F2C29D430908}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_SpaceContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-11-30T12:49:05.4679898-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

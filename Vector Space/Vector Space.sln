@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vector_Space", "Vector Space\Vector_Space\Vector_Space.csproj", "{9113E6BC-A2B1-49D8-BA36-B6115D9BB148}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "Vector_SpaceContent", "Vector Space\Vector_SpaceContent\Vector_SpaceContent.contentproj", "{0CF16629-51CB-4AD4-8B4C-F2C29D430908}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9113E6BC-A2B1-49D8-BA36-B6115D9BB148}.Debug|x86.ActiveCfg = Debug|x86
+		{9113E6BC-A2B1-49D8-BA36-B6115D9BB148}.Debug|x86.Build.0 = Debug|x86
+		{9113E6BC-A2B1-49D8-BA36-B6115D9BB148}.Release|x86.ActiveCfg = Release|x86
+		{9113E6BC-A2B1-49D8-BA36-B6115D9BB148}.Release|x86.Build.0 = Release|x86
+		{0CF16629-51CB-4AD4-8B4C-F2C29D430908}.Debug|x86.ActiveCfg = Debug|x86
+		{0CF16629-51CB-4AD4-8B4C-F2C29D430908}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

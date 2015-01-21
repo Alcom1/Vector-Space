@@ -1,0 +1,6 @@
+C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\obj\x86\Debug\Vector_Space.csprojResolveAssemblyReference.cache
+C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\bin\x86\Debug\Vector_Space.exe
+C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\bin\x86\Debug\Vector_Space.pdb
+C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\obj\x86\Debug\Vector_Space.exe
+C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\obj\x86\Debug\Vector_Space.pdb
