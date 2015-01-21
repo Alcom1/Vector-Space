@@ -19,7 +19,7 @@ namespace Vector_Space
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private Player triangle;
+        private Mesh player;
         private Texture2D cube;
         private Texture2D circle;
         private MouseState mouse;
@@ -36,10 +36,26 @@ namespace Vector_Space
         {
             // TODO: Add your initialization logic here
             base.Initialize();
-            triangle = new Player(
-                100,
-                100,
-                GraphicsDevice);
+            player = new Mesh(
+                new Point[]
+                {
+                    new Point(0, 75),
+                    new Point(50, -50),
+                    new Point(-50, -50),
+                    new Point(0,0)
+                },
+                new int[][]
+                {
+                    new int[] {0, 1},
+                    new int[] {1, 2},
+                    new int[] {2, 0},
+
+                    new int[] {0, 3},
+                    new int[] {1, 3},
+                    new int[] {2, 3}
+                },
+                new Point(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2),
+                6);
             Window.Title = "";
         }
 
@@ -73,9 +89,7 @@ namespace Vector_Space
             mouse = Mouse.GetState();
             keyboard = Keyboard.GetState();
 
-            Console.Clear();
-            triangle.Form(mouse.X, mouse.Y);
-            Console.WriteLine(triangle.Angle);
+            player.Form(mouse.X, mouse.Y);
 
             base.Update(gameTime);
         }
@@ -88,7 +102,16 @@ namespace Vector_Space
             // TODO: Add your drawing code here
             base.Draw(gameTime);
             spriteBatch.Begin();
-            triangle.Draw(circle, cube, spriteBatch);
+
+            //Draw player
+            player.Draw(circle, cube, spriteBatch);
+            
+            //Draw Mouse
+            spriteBatch.Draw(
+                circle,
+                new Rectangle(mouse.X - 10, mouse.Y - 10, 20, 20),
+                Color.White);
+
             spriteBatch.End();
         }
 
