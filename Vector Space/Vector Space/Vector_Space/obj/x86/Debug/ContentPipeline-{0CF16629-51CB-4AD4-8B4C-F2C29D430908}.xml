@@ -8,10 +8,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_SpaceContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_Space\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector Space\Vector_SpaceContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector Space\Vector_Space\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector Space\Vector_Space\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector Space\Vector_Space\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

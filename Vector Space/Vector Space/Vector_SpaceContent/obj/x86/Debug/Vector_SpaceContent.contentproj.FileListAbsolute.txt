@@ -1,1 +1,2 @@
 C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector_SpaceContent\obj\x86\Debug\Vector_SpaceContent.contentprojResolveAssemblyReference.cache
+C:\Users\A\Desktop\CSharp\Vector Space\Vector Space\Vector Space\Vector_SpaceContent\obj\x86\Debug\Vector_SpaceContent.contentprojResolveAssemblyReference.cache

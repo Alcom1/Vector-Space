@@ -19,10 +19,11 @@ namespace Vector_Space
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private Triangle triangle;
+        private Player triangle;
         private Texture2D cube;
         private Texture2D circle;
         private MouseState mouse;
+        private KeyboardState keyboard;
 
         public Game()
         {
@@ -35,10 +36,10 @@ namespace Vector_Space
         {
             // TODO: Add your initialization logic here
             base.Initialize();
-            triangle = new Triangle(
-                GraphicsDevice.Viewport.Width / 2,
-                GraphicsDevice.Viewport.Height / 2);
-            this.IsMouseVisible = true;
+            triangle = new Player(
+                100,
+                100,
+                GraphicsDevice);
             Window.Title = "";
         }
 
@@ -70,11 +71,11 @@ namespace Vector_Space
 
             // TODO: Add your update logic here
             mouse = Mouse.GetState();
-            if (mouse.LeftButton == ButtonState.Pressed)
-            {
-                triangle.moveVectorB(mouse.X, mouse.Y);
-                triangle.moveVectorC();
-            }
+            keyboard = Keyboard.GetState();
+
+            Console.Clear();
+            triangle.Form(mouse.X, mouse.Y);
+            Console.WriteLine(triangle.Angle);
 
             base.Update(gameTime);
         }
@@ -110,7 +111,7 @@ namespace Vector_Space
                     i < segment * radius * 2 + radius * 2 - biteOff;
                     ++i)
                 {
-                    circle[i] = Color.Gray;    //Make pixel in circle white.
+                    circle[i] = Color.White;    //Make pixel in circle white.
                 }
             }
 
