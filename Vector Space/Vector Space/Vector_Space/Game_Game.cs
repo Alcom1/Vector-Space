@@ -19,29 +19,38 @@ namespace Vector_Space
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        private Mesh player;
-        private Texture2D cube;
-        private Texture2D circle;
-        private MouseState mouse;
-        private KeyboardState keyboard;
+        //Meshes
+        private Mesh player;                //Player mesh
 
+        //Misc
+        private Texture2D cube;             //1x1 Cube texture.
+        private Texture2D circle;           //circle texture.
+        private MouseState mouse;           //Mouse state.
+        private KeyboardState keyboard;     //Keyboard state.
+        private MouseState mousePrev;       //Mouse state.
+        private KeyboardState keyboardPrev; //Keyboard state.
+
+        //Constructor
         public Game()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
 
-        //Game Method
+        //Game Method Initialize
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
             base.Initialize();
+            Window.Title = "";
+
+            //Hardcoded player
             player = new Mesh(
                 new Point[]
                 {
-                    new Point(0, 75),
-                    new Point(50, -50),
-                    new Point(-50, -50),
+                    new Point(0, 40),
+                    new Point(20, -20),
+                    new Point(-20, -20),
                     new Point(0,0)
                 },
                 new int[][]
@@ -55,11 +64,10 @@ namespace Vector_Space
                     new int[] {2, 3}
                 },
                 new Point(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2),
-                6);
-            Window.Title = "";
+                4);
         }
 
-        //Game Method
+        //Game Method load and generate content
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
@@ -72,29 +80,23 @@ namespace Vector_Space
             circle = CreateCircleFilled(200);
         }
 
-        //Game Method
-        protected override void UnloadContent()
-        {
-            // TODO: Unload any non ContentManager content here
-        }
-
-        //Game Method
+        //Game Method Update
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
-
-            // TODO: Add your update logic here
+            //Gets mouse and keyboard state.
             mouse = Mouse.GetState();
             keyboard = Keyboard.GetState();
 
+            //Core game logic.
             player.Form(mouse.X, mouse.Y);
 
+            //Saves last frame's mouse and keyboard state.
+            mousePrev = Mouse.GetState();
+            keyboardPrev = Keyboard.GetState();
             base.Update(gameTime);
         }
 
-        //Game Method
+        //Game Method Draw
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
