@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using System.Threading;
 
 namespace Vector_Space
 {
@@ -19,8 +20,9 @@ namespace Vector_Space
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        //Meshes
-        private Mesh player;                //Player mesh
+        //Game objects.
+        private Mesh player;                //Player mesh.
+        List<Particle> projectiles;         //Projectiles.
 
         //Misc
         private Texture2D cube;             //1x1 Cube texture.
@@ -65,6 +67,9 @@ namespace Vector_Space
                 },
                 new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2),
                 4);
+
+            //Projectiles
+            projectiles = new List<Particle>();
         }
 
         //Game Method load and generate content
@@ -89,6 +94,7 @@ namespace Vector_Space
 
             //Core game logic.
             player.Form(mouse.X, mouse.Y);
+            this.HandleProjectiles();
 
             //Saves last frame's mouse and keyboard state.
             mousePrev = Mouse.GetState();
@@ -101,12 +107,17 @@ namespace Vector_Space
         {
             GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
-            base.Draw(gameTime);
+            //Begin SpriteBatch.
             spriteBatch.Begin();
 
             //Draw player
             player.Draw(circle, cube, spriteBatch);
+
+            //Draw projectiles
+            foreach (Particle projectile in projectiles)
+            {
+                projectile.Draw(circle, spriteBatch);
+            }
             
             //Draw Mouse
             spriteBatch.Draw(
@@ -114,7 +125,9 @@ namespace Vector_Space
                 new Rectangle(mouse.X - 10, mouse.Y - 10, 20, 20),
                 Color.White);
 
+            //End SpriteBatch
             spriteBatch.End();
+            base.Draw(gameTime);
         }
 
         //Creates a filled circle texture.
@@ -145,6 +158,34 @@ namespace Vector_Space
             circleTexture.SetData(circle);
             
             return circleTexture;
+        }
+
+        //Handles projectiles
+        public void HandleProjectiles()
+        {
+            //Button click generates a projectile.
+            if (mouse.LeftButton == ButtonState.Pressed && mousePrev.LeftButton == ButtonState.Released)
+            {
+                projectiles.Add(new Particle(
+                    new Vector2[]
+                    {
+                        new Vector2(0, 0),
+                    },
+                    new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2),
+                    4,
+                    player.Angle,
+                    200));
+            }
+
+            //Moves or clears projectiles.
+            for(int i = 0; i < projectiles.Count; ++i)
+            {
+                if(projectiles[i].Form(3))
+                {
+                    //clear projectiles past thier lifeLength.
+                    projectiles.RemoveAt(i);
+                }
+            }
         }
     }
 }
