@@ -46,12 +46,12 @@ namespace Vector_Space
 
             //Hardcoded player
             player = new Mesh(
-                new Point[]
+                new Vector2[]
                 {
-                    new Point(0, 40),
-                    new Point(20, -20),
-                    new Point(-20, -20),
-                    new Point(0,0)
+                    new Vector2(0, 40),
+                    new Vector2(20, -20),
+                    new Vector2(-20, -20),
+                    new Vector2(0,0)
                 },
                 new int[][]
                 {
@@ -63,7 +63,7 @@ namespace Vector_Space
                     new int[] {1, 3},
                     new int[] {2, 3}
                 },
-                new Point(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2),
+                new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2),
                 4);
         }
 
@@ -77,7 +77,7 @@ namespace Vector_Space
             cube = new Texture2D(GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
             cube.SetData<Color>(new Color[1] { Color.White });
 
-            circle = CreateCircleFilled(200);
+            circle = CreateCircleFilled(50);
         }
 
         //Game Method Update

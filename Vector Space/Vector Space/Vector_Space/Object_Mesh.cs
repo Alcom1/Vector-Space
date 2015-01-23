@@ -14,18 +14,18 @@ namespace Vector_Space
     class Mesh
     {
         //Relative positioning arrays.
-        private Point[] pointsRelative; //Relative position of points to the center of the mesh.
+        private Vector2[] pointsRelative; //Relative position of points to the center of the mesh.
         private int[] lengthRelative;   //Distance between the points and the center of the mesh.
         private double[] angleRelative; //Direction angle of the points relative to the mesh.
         
         //Absolute positioning arrays.
-        private Point[] pointsAbsolute; //Absolute position of the points.
+        private Vector2[] pointsAbsolute; //Absolute position of the points.
 
         //Line arrays.
         private int[][] adjacency;       //2D array determining what points are connected by lines.
 
         //Absolute positioning variables.
-        private Point center;           //Absolute center of the mesh.
+        private Vector2 center;           //Absolute center of the mesh.
         private double angle;           //Absolute angle of the mesh.
         public double Angle
         {
@@ -35,7 +35,7 @@ namespace Vector_Space
         //Dimensioning variables.
         int width;
 
-        public Mesh(Point[] points, int[][] _adjacency, Point _center, int _width)
+        public Mesh(Vector2[] points, int[][] _adjacency, Vector2 _center, int _width)
         {
             //Establish object center, angle, and width.
             center = _center;
@@ -49,7 +49,7 @@ namespace Vector_Space
             //Instantiate all other arrays.
             lengthRelative = new int[points.Length];
             angleRelative = new double[points.Length];
-            pointsAbsolute = new Point[points.Length];
+            pointsAbsolute = new Vector2[points.Length];
 
             //Establish relative length and angle.
             for (int i = 0; i < points.Length; ++i)
@@ -92,7 +92,7 @@ namespace Vector_Space
         public void Draw(Texture2D circle, Texture2D cube, SpriteBatch spriteBatch)
         {
             //Draw all circles.
-            foreach (Point point in pointsAbsolute)
+            foreach (Vector2 point in pointsAbsolute)
             {
                 this.DrawCircle(circle, spriteBatch, point);
             }
@@ -109,7 +109,7 @@ namespace Vector_Space
         }
 
         //Draw a line in the mesh.
-        private void DrawLine(Texture2D cube, SpriteBatch spriteBatch, Point pointI, Point pointJ)
+        private void DrawLine(Texture2D cube, SpriteBatch spriteBatch, Vector2 pointI, Vector2 pointJ)
         {
             spriteBatch.Draw(
                 cube,
@@ -131,7 +131,7 @@ namespace Vector_Space
         }
 
         //Draw a point in the mesh.
-        private void DrawCircle(Texture2D circle, SpriteBatch spriteBatch, Point pointI)
+        private void DrawCircle(Texture2D circle, SpriteBatch spriteBatch, Vector2 pointI)
         {
             spriteBatch.Draw(
                 circle,
